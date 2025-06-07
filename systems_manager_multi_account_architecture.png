@@ -1,0 +1,83 @@
+digraph "AWS Systems Manager Multi-Account Multi-Region Automation" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="AWS Systems Manager Multi-Account Multi-Region Automation" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	"4bc03fa16cbf409d8ebe818edafb099e" [label=Administrator height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/general/user.png" shape=none]
+	cd30e09cf00a4f92970a73067bc8385c -> "83949a5d3a8d4e8bb15e318c4e0b578d" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	cd30e09cf00a4f92970a73067bc8385c -> "0c2bce92f51641aa8b516519538dfae0" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	cd30e09cf00a4f92970a73067bc8385c -> f24ff494f25048b695ee857d934efc7f [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	cd30e09cf00a4f92970a73067bc8385c -> a6c7c768b4fa49bdb377e5393128a5ba [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	cd30e09cf00a4f92970a73067bc8385c -> "842e356c46d84f44ba9902a2ccac0669" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	cd30e09cf00a4f92970a73067bc8385c -> "0653517611de46c98f9fed385fb7b17a" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"49119a116402466e8420dbcfcc7f9aa6" -> bfa2e3788dab465c8653fa008f5cc888 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"49119a116402466e8420dbcfcc7f9aa6" -> c60752e776a7440faa3b9ce545664500 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"49119a116402466e8420dbcfcc7f9aa6" -> "9be7e564fda24cdf8e763de9474c221c" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph "cluster_AWS Organizations" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="AWS Organizations" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"49119a116402466e8420dbcfcc7f9aa6" [label="AWS Organizations" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/organizations.png" shape=none]
+		subgraph "cluster_Management Account" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="Management Account" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"7c9a11802d0c47deb09ba21b89116bcd" [label="Management Account" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/organizations-account.png" shape=none]
+			subgraph "cluster_Systems Manager" {
+				graph [bgcolor="#ECE8F6" fontname="Sans-Serif" fontsize=12 label="Systems Manager" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+				cd30e09cf00a4f92970a73067bc8385c [label="Systems Manager" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/systems-manager.png" shape=none]
+				"83949a5d3a8d4e8bb15e318c4e0b578d" [label=Automation height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/systems-manager-automation.png" shape=none]
+				"0c2bce92f51641aa8b516519538dfae0" [label="State Manager" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/systems-manager-state-manager.png" shape=none]
+				f24ff494f25048b695ee857d934efc7f [label="Parameter Store" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/systems-manager-parameter-store.png" shape=none]
+				a6c7c768b4fa49bdb377e5393128a5ba [label=Inventory height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/systems-manager-inventory.png" shape=none]
+				"842e356c46d84f44ba9902a2ccac0669" [label="Patch Manager" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/systems-manager-patch-manager.png" shape=none]
+				"0653517611de46c98f9fed385fb7b17a" [label="Run Command" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/systems-manager-run-command.png" shape=none]
+			}
+		}
+		subgraph "cluster_Member Accounts" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="Member Accounts" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			bfa2e3788dab465c8653fa008f5cc888 [label="Account 1" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/organizations-account.png" shape=none]
+			c60752e776a7440faa3b9ce545664500 [label="Account 2" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/organizations-account.png" shape=none]
+			"9be7e564fda24cdf8e763de9474c221c" [label="Account 3" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/management/organizations-account.png" shape=none]
+		}
+	}
+	subgraph "cluster_Region: us-east-1" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Region: us-east-1" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"0c0ca5220211413b8a7aae3e2c92fd49" [label="us-east-1" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/general/general.png" shape=none]
+		subgraph cluster_Resources {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label=Resources labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"86da6ce6848145e2832c3e5b00eae9c4" [label="EC2 Instances" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/compute/ec2.png" shape=none]
+			"91f3cd21d7934e85af78b6eadb131942" [label="Lambda Functions" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/compute/lambda.png" shape=none]
+		}
+	}
+	subgraph "cluster_Region: eu-west-1" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Region: eu-west-1" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		de6dd37b938949368b167325c0131b56 [label="eu-west-1" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/general/general.png" shape=none]
+		subgraph cluster_Resources {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label=Resources labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"5a9106f314c14e3b96d6d8fa15d2e30d" [label="EC2 Instances" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/compute/ec2.png" shape=none]
+			"06f8e1acc07c4916adcbe9b177049a90" [label="Lambda Functions" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/compute/lambda.png" shape=none]
+		}
+	}
+	subgraph "cluster_Region: ap-southeast-2" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Region: ap-southeast-2" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		cb30911b792e4e82905a28db37d181ab [label="ap-southeast-2" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/general/general.png" shape=none]
+		subgraph cluster_Resources {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label=Resources labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"4410fc7dcedc4bb0bba194c079af50b7" [label="EC2 Instances" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/compute/ec2.png" shape=none]
+			"6f0f6c350af549fc9a7568b3df8307d7" [label="Lambda Functions" height=1.9 image="/home/amazon/.cache/uv/archive-v0/OANQzKC4haTCPId1_R6aA/lib/python3.12/site-packages/resources/aws/compute/lambda.png" shape=none]
+		}
+	}
+	"4bc03fa16cbf409d8ebe818edafb099e" -> cd30e09cf00a4f92970a73067bc8385c [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"83949a5d3a8d4e8bb15e318c4e0b578d" -> bfa2e3788dab465c8653fa008f5cc888 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"83949a5d3a8d4e8bb15e318c4e0b578d" -> c60752e776a7440faa3b9ce545664500 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"83949a5d3a8d4e8bb15e318c4e0b578d" -> "9be7e564fda24cdf8e763de9474c221c" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	bfa2e3788dab465c8653fa008f5cc888 -> "0c0ca5220211413b8a7aae3e2c92fd49" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	bfa2e3788dab465c8653fa008f5cc888 -> de6dd37b938949368b167325c0131b56 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	bfa2e3788dab465c8653fa008f5cc888 -> cb30911b792e4e82905a28db37d181ab [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c60752e776a7440faa3b9ce545664500 -> "0c0ca5220211413b8a7aae3e2c92fd49" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c60752e776a7440faa3b9ce545664500 -> de6dd37b938949368b167325c0131b56 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"9be7e564fda24cdf8e763de9474c221c" -> "0c0ca5220211413b8a7aae3e2c92fd49" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"9be7e564fda24cdf8e763de9474c221c" -> cb30911b792e4e82905a28db37d181ab [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"0c0ca5220211413b8a7aae3e2c92fd49" -> "86da6ce6848145e2832c3e5b00eae9c4" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"0c0ca5220211413b8a7aae3e2c92fd49" -> "91f3cd21d7934e85af78b6eadb131942" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	de6dd37b938949368b167325c0131b56 -> "5a9106f314c14e3b96d6d8fa15d2e30d" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	de6dd37b938949368b167325c0131b56 -> "06f8e1acc07c4916adcbe9b177049a90" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	cb30911b792e4e82905a28db37d181ab -> "4410fc7dcedc4bb0bba194c079af50b7" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	cb30911b792e4e82905a28db37d181ab -> "6f0f6c350af549fc9a7568b3df8307d7" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+}
